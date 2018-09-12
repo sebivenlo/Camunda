@@ -1,1 +1,1 @@
-# this is docker file
+FROM camunda/camunda-bpm-platform:tomcat-latest
