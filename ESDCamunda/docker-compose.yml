@@ -1,0 +1,11 @@
+### Workflow SERVER
+workflow:
+  build: .
+  ports:
+  - "8000:8000"
+  links:
+  - camunda
+
+### REDIS SERVER
+camunda:
+  image: camunda/camunda-bpm-platform:latest
