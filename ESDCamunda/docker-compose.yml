@@ -1,10 +1,10 @@
 ### Camunda BPM Platform
 camunda:
   image: camunda/camunda-bpm-platform:latest
+  ports:
+  - "8080:8080"
 ### Workflow
 workflow:
   build: .
-  ports:
-  - "8080:8080"
   links:
   - camunda
