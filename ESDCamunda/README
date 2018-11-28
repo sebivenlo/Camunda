@@ -1,2 +1,7 @@
+docker network create myNetwork
+
 docker pull camunda/camunda-bpm-platform:latest
-docker run -d --name camunda -p 8080:8080 camunda/camunda-bpm-platform:latest
+docker run -d --name camunda -p 8080:8080 --network myNetwork camunda/camunda-bpm-platform:latest
+
+docker build -t t1:latest .
+docker run --network myNetwork t1:latest
