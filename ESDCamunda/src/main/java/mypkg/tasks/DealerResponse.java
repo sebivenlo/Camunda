@@ -1,5 +1,6 @@
 package mypkg.tasks;
 
+import mypkg.util.Customer;
 import org.camunda.bpm.client.ExternalTaskClient;
 
 public class DealerResponse {
@@ -14,5 +15,11 @@ public class DealerResponse {
         myClient = externalTaskClient;
     }
 
-    
+    public void sendNegativeResponseTask() {
+
+    }
+
+    public void sendNegativeResponse(Customer customer) {
+        System.out.println("Negative Response email sent to customer" + customer);
+    }
 }
