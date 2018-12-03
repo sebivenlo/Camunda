@@ -31,6 +31,8 @@ public class DealerResponse {
      */
     public int sendPositiveResponse (Customer customer) {
 
+        return 0;
+
     }
     /***
      *
@@ -39,13 +41,15 @@ public class DealerResponse {
      */
     public int sendNegativeResponse (Customer customer) {
 
+        return 0;
+
     }
 
     public void sendCustomerFinanceResponse (Customer customer, Car car) {
         if (this.customerCanFinanceCar(customer, car)) {
-            this.sendPositiveResponseTask(customer, car);
+            this.sendPositiveResponse(customer);
         }
-        this.sendNegativeResponseTask(customer, car);
+        this.sendNegativeResponse(customer);
     }
 
     /***
