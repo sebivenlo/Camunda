@@ -1,13 +1,25 @@
 # Camunda
 
+## Prerequisites
+
+Postman installed for REST-API calls:
+
+    https://www.getpostman.com/apps
+
+Docker installed and running:
+
+    https://www.docker.com/get-started
+
+An IDE for Java (e.g. IntelliJ, Netbeans, Eclipse, vim/nano if you are somehow special)
+
 ## Setup
 
 CD into the ESDCamunda project :
 
     cd ESDCamunda/
-    
+
 Create Docker network so that the containers find each other:
-    
+
     docker network create myNetwork
 
 Pull Docker container that contains the Camunda Platform and run it:
