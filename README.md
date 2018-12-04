@@ -45,3 +45,21 @@ Access tasklist:
 Access cockpit:
 
     http://localhost:8080/camunda/app/cockpit/
+
+Create customer via REST-API call:
+
+    {
+      "variables": {
+        "firstName": {
+          "value": "Peter"
+        },
+        "lastName": {
+          "value": "Klausen"
+        },
+        "emailAdress": {
+          "value": "my@mail.com"
+        }
+      }
+    }
+
+Be sure to select application/json for this request, its a POST call.
