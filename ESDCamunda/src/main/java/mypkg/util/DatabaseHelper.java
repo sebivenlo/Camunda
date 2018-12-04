@@ -11,7 +11,7 @@ public class DatabaseHelper {
     }
 
     public int getPreferredFinanceType(Customer customer) {
-        return 0
+        return 0;
     }
 
 }
