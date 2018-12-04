@@ -7,14 +7,13 @@ public class EmailHelper {
 
     private int type;
     private Customer recipient;
-    private final String API_KEY = "GTFO";
+    private final String API_KEY = "LGTM";
     public EmailHelper(int type, Customer recipient) {
         this.type = type;
         this.recipient = recipient;
     }
 
     public EmailHelper() {
-        this.sendWelcomeMail();
     }
 
     public void sendWelcomeMail() {
