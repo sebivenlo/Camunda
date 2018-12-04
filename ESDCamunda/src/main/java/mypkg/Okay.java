@@ -1,12 +1,14 @@
 package mypkg;
 import java.util.logging.Logger;
+
+import mypkg.util.EmailHelper;
 import org.camunda.bpm.client.*;
 
 public class Okay {
     private final static Logger LOGGER = Logger.getLogger(Okay.class.getName());
 
     public static void main(String[] args) {
-        ExternalTaskClient client = ExternalTaskClient.create()
+       /* ExternalTaskClient client = ExternalTaskClient.create()
                 .baseUrl("http://172.17.0.1:8080/engine-rest")
                 .build();
         // subscribe to an external task topic as specified in the process
@@ -23,6 +25,8 @@ public class Okay {
                     // Complete the task
                     externalTaskService.complete(externalTask);
                 })
-                .open();
+                .open(); */
+
+        EmailHelper eh = new EmailHelper();
     }
 }
