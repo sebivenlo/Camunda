@@ -37,3 +37,11 @@ Build the Docker container of the client and run it:
 Again we use "--network myNetwork" to join the same network. Without this option our second container would not be able to access the first one.
 "-d" silences the container, --name gives it a name for simple container management.
 "-p 8080:8080" maps the ports inside the container to the ports exposed to the network.
+
+Access tasklist:
+
+    http://localhost:8080/camunda/app/tasklist/default/
+
+Access cockpit:
+
+    http://localhost:8080/camunda/app/cockpit/
