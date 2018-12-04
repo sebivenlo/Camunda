@@ -5,11 +5,14 @@ public class Customer {
     public String firstName;
     public String lastName;
     public int yearlyIncome;
+    public String emailAdress;
+    private int preferredFinanceType;
 
-    public Customer(String firstName, String lastName, int yearlyIncome) {
+    public Customer(String firstName, String lastName, int yearlyIncome, String emailAdress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearlyIncome = yearlyIncome;
+        this.emailAdress = emailAdress;
 
     }
 
@@ -35,5 +38,21 @@ public class Customer {
 
     public void setYearlyIncome(int yearlyIncome) {
         this.yearlyIncome = yearlyIncome;
+    }
+
+    public String getEmailAdress() {
+        return emailAdress;
+    }
+
+    public void setEmailAdress(String emailAdress) {
+        this.emailAdress = emailAdress;
+    }
+
+    public int getPreferredFinanceType(){
+        if (preferredFinanceType == 0) {
+            DatabaseHelper dbh = new DatabaseHelper();
+            return dbh.getPreferredFinanceType(this);
+        }
+        return preferredFinanceType;
     }
 }
