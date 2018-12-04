@@ -18,7 +18,13 @@ public class EmailTasks {
         this.emailHelper = new EmailHelper();
 
     }
-
+    /*
+    Subscribe to welcome email task
+    DO NOT FORGET
+          externalTaskService.complete(externalTask);
+    IF YOU DO IT WILL SPAM FOREVER!!!!!
+    !!!!
+     */
     public void subScribeToWelcomeMail() {
         this.client.getClient().subscribe("send-mail")
                 .lockDuration(1000)
@@ -28,7 +34,9 @@ public class EmailTasks {
                             emailHelper.sendWelcomeMail();
                             */
                             System.out.println("Email sent?");
+                            externalTaskService.complete(externalTask);
                         })
+
                 .open();
     }
 }
