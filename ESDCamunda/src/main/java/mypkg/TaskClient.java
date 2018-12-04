@@ -6,7 +6,7 @@ public class TaskClient {
     ExternalTaskClient client;
 
     public TaskClient(){
-        final String baseUrl = "http://localhost:8080/engine-rest";
+        final String baseUrl = "http://172.17.0.1:8080/engine-rest";
 
         client = ExternalTaskClient.create()
                 .baseUrl(baseUrl)
