@@ -2,11 +2,9 @@ package mypkg;
 import java.util.logging.Logger;
 
 import mypkg.tasks.EmailTasks;
-import mypkg.util.EmailHelper;
-import org.camunda.bpm.client.*;
 
-public class Okay {
-    private final static Logger LOGGER = Logger.getLogger(Okay.class.getName());
+public class ESDCamunda {
+    private final static Logger LOGGER = Logger.getLogger(ESDCamunda.class.getName());
 
     public static void main(String[] args) {
 
