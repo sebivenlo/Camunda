@@ -32,10 +32,11 @@ public class EmailTasks {
                             String firstName = externalTask.getVariable("firstName");
                             String lastName = externalTask.getVariable("lastName");
                             int yearlyIncome = externalTask.getVariable("yearlyIncome");
-                            String email = externalTask.getVariable("email");
-                            
+                            String email = externalTask.getVariable("emailAdress");
+
+                    System.out.println( firstName + lastName + yearlyIncome + email);
                             Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
-                            emailHelper.sendWelcomeMail(customer);
+                            //emailHelper.sendWelcomeMail(customer);
                             // DO NOT FORGET TO COMPLETE TASK!!!
                             externalTaskService.complete(externalTask);
                         })
