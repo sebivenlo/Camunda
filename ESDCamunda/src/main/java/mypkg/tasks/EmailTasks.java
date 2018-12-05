@@ -1,6 +1,7 @@
 package mypkg.tasks;
 
 import mypkg.TaskClient;
+import mypkg.util.Customer;
 import mypkg.util.EmailHelper;
 
 public class EmailTasks {
@@ -28,7 +29,13 @@ public class EmailTasks {
         this.client.getClient().subscribe("send-mail")
                 .lockDuration(1000)
                 .handler((externalTask, externalTaskService) -> {
-                            emailHelper.sendWelcomeMail();
+                            String firstName = externalTask.getVariable("firstName");
+                            String lastName = externalTask.getVariable("lastName");
+                            int yearlyIncome = externalTask.getVariable("yearlyIncome");
+                            String email = externalTask.getVariable("email");
+                            
+                            Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
+                            emailHelper.sendWelcomeMail(customer);
                             // DO NOT FORGET TO COMPLETE TASK!!!
                             externalTaskService.complete(externalTask);
                         })
