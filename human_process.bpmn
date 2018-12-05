@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_124q0g5" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="2.0.3">
-  <bpmn:process id="Process_1" isExecutable="true">
+  <bpmn:process id="example-2" name="Example 2" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Leasing request">
       <bpmn:outgoing>SequenceFlow_0g8rbi3</bpmn:outgoing>
     </bpmn:startEvent>
@@ -48,7 +48,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_0ycw2un" name="No" sourceRef="ExclusiveGateway_18b5wuj" targetRef="Task_0xojaig" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="example-2">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="173" y="237" width="36" height="36" />
         <bpmndi:BPMNLabel>
