@@ -29,18 +29,37 @@ public class EmailTasks {
         this.client.getClient().subscribe("send-mail")
                 .lockDuration(1000)
                 .handler((externalTask, externalTaskService) -> {
-                            String firstName = externalTask.getVariable("firstName");
-                            String lastName = externalTask.getVariable("lastName");
-                            int yearlyIncome = externalTask.getVariable("yearlyIncome");
-                            String email = externalTask.getVariable("emailAdress");
+                    String firstName = externalTask.getVariable("firstName");
+                    String lastName = externalTask.getVariable("lastName");
+                    int yearlyIncome = externalTask.getVariable("yearlyIncome");
+                    String email = externalTask.getVariable("emailAdress");
 
                     System.out.println( firstName + lastName + yearlyIncome + email);
-                            Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
-                            //emailHelper.sendWelcomeMail(customer);
-                            // DO NOT FORGET TO COMPLETE TASK!!!
-                            externalTaskService.complete(externalTask);
-                        })
+                     Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
+                    //emailHelper.sendWelcomeMail(customer);
+                    // DO NOT FORGET TO COMPLETE TASK!!!
+                    externalTaskService.complete(externalTask);
+                })
 
                 .open();
     }
+
+    public void subscribeToDenyLeasingRequest() {
+        this.client.getClient().subscribe("deny-leasing-request")
+                .lockDuration(1000)
+                .handler((externalTask, externalTaskService) -> {
+                    String firstName = externalTask.getVariable("firstName");
+                    String lastName = externalTask.getVariable("lastName");
+                    int yearlyIncome = externalTask.getVariable("yearlyIncome");
+                    String email = externalTask.getVariable("emailAdress");
+
+                    Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
+
+
+
+                })
+                .open();
+    }
+
+
 }
