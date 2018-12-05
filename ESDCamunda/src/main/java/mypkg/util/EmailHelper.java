@@ -18,9 +18,9 @@ public class EmailHelper {
 
     public void sendWelcomeMail() {
         Email from = new Email("jonas.a.heinz@gmail.com");
-        String subject = "Sending with SendGrid is Fun";
+        String subject = "Welcome";
         Email to = new Email("jonas.a.heinz@gmail.com");
-        Content content = new Content("text/plain", "and easy to do anywhere, even with Java");
+        Content content = new Content("text/plain", "This is welcome email");
         Mail mail = new Mail(from, subject, to, content);
 
         SendGrid sg = new SendGrid(this.API_KEY);
@@ -30,13 +30,12 @@ public class EmailHelper {
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
             Response response = sg.api(request);
-            System.out.println(response.getStatusCode());
-            System.out.println(response.getBody());
-            System.out.println(response.getHeaders());
+            //System.out.println(response.getStatusCode());
+            //System.out.println(response.getBody());
+            //System.out.println(response.getHeaders());
         } catch (java.io.IOException ex) {
             System.out.println(ex);
         }
-        //System.out.println("Welcome email sent to " + recipient.getEmailAdress());
     }
 
 }
