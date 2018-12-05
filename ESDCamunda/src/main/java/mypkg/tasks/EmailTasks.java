@@ -54,9 +54,26 @@ public class EmailTasks {
                     String email = externalTask.getVariable("emailAdress");
 
                     Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
+                    emailHelper.sendDenyEmail(customer);
 
+                    externalTaskService.complete(externalTask);
+                })
+                .open();
+    }
 
+    public void subscribeToAcceptLeasingRequest() {
+        this.client.getClient().subscribe("approve-leasing-request")
+                .lockDuration(1000)
+                .handler((externalTask, externalTaskService) -> {
+                    String firstName = externalTask.getVariable("firstName");
+                    String lastName = externalTask.getVariable("lastName");
+                    int yearlyIncome = externalTask.getVariable("yearlyIncome");
+                    String email = externalTask.getVariable("emailAdress");
 
+                    Customer customer = new Customer(firstName, lastName, yearlyIncome, email);
+                    emailHelper.sendApprovalMail(customer);
+
+                    externalTaskService.complete(externalTask);
                 })
                 .open();
     }

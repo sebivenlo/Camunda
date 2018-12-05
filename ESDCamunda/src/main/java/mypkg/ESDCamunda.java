@@ -32,6 +32,8 @@ public class ESDCamunda {
         TaskClient taskClient = new TaskClient();
         emailTasks = new EmailTasks(taskClient);
         emailTasks.subScribeToWelcomeMail();
+        emailTasks.subscribeToAcceptLeasingRequest();
+        emailTasks.subscribeToDenyLeasingRequest();
 
     }
     public static void subscribeToTasks(){
