@@ -8,18 +8,14 @@ public class EmailHelper {
     private int type;
     private Customer recipient;
     private final String API_KEY = "LGTM";
-    public EmailHelper(int type, Customer recipient) {
-        this.type = type;
-        this.recipient = recipient;
-    }
 
     public EmailHelper() {
     }
 
-    public void sendWelcomeMail() {
+    public void sendWelcomeMail(Customer customer) {
         Email from = new Email("jonas.a.heinz@gmail.com");
         String subject = "Welcome";
-        Email to = new Email("jonas.a.heinz@gmail.com");
+        Email to = new Email(customer.getEmailAdress());
         Content content = new Content("text/plain", "This is welcome email");
         Mail mail = new Mail(from, subject, to, content);
 
