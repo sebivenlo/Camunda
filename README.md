@@ -2,6 +2,10 @@
 
 ## Prerequisites
 
+Camunda Modeler installed:
+
+    https://camunda.com/download/modeler/
+
 Postman installed for REST-API calls:
 
     https://www.getpostman.com/apps
