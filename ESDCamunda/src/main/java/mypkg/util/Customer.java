@@ -6,7 +6,6 @@ public class Customer {
     public String lastName;
     public int yearlyIncome;
     public String emailAdress;
-    private int preferredFinanceType;
 
     public Customer(String firstName, String lastName, int yearlyIncome, String emailAdress) {
         this.firstName = firstName;
@@ -46,13 +45,5 @@ public class Customer {
 
     public void setEmailAdress(String emailAdress) {
         this.emailAdress = emailAdress;
-    }
-
-    public int getPreferredFinanceType(){
-        if (preferredFinanceType == 0) {
-            DatabaseHelper dbh = new DatabaseHelper();
-            return dbh.getPreferredFinanceType(this);
-        }
-        return preferredFinanceType;
     }
 }

@@ -1,6 +1,5 @@
 package mypkg.tasks;
 
-import com.sendgrid.Email;
 import mypkg.TaskClient;
 import mypkg.util.EmailHelper;
 
@@ -29,11 +28,8 @@ public class EmailTasks {
         this.client.getClient().subscribe("send-mail")
                 .lockDuration(1000)
                 .handler((externalTask, externalTaskService) -> {
-                            /*
-                            Had to remove this since i'm stupid enough to spam the sengrid enpoint
                             emailHelper.sendWelcomeMail();
-                            */
-                            System.out.println("Email sent?");
+                            // DO NOT FORGET TO COMPLETE TASK!!!
                             externalTaskService.complete(externalTask);
                         })
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_124q0g5" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="2.0.3">
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Leasing request">
+      <bpmn:outgoing>SequenceFlow_0g8rbi3</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1bx41p4" name="Yearly income">
+      <bpmn:incoming>SequenceFlow_0g8rbi3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qyfc86</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_11h6ue8</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1xc4c3v</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0g8rbi3" sourceRef="StartEvent_1" targetRef="ExclusiveGateway_1bx41p4" />
+    <bpmn:sequenceFlow id="SequenceFlow_1qyfc86" sourceRef="ExclusiveGateway_1bx41p4" targetRef="Task_0z1jv7e">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" />
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_11h6ue8" sourceRef="ExclusiveGateway_1bx41p4" targetRef="Task_12cix26" />
+    <bpmn:sequenceFlow id="SequenceFlow_1xc4c3v" sourceRef="ExclusiveGateway_1bx41p4" targetRef="Task_0xojaig" />
+    <bpmn:userTask id="Task_12cix26" name="Manual Review Request">
+      <bpmn:incoming>SequenceFlow_11h6ue8</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Task_0z1jv7e" name="Approve Leasing Request&#10;">
+      <bpmn:incoming>SequenceFlow_1qyfc86</bpmn:incoming>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_0xojaig" name="Deny Leasing Request">
+      <bpmn:incoming>SequenceFlow_1xc4c3v</bpmn:incoming>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="237" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="152" y="280" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1bx41p4_di" bpmnElement="ExclusiveGateway_1bx41p4" isMarkerVisible="true">
+        <dc:Bounds x="328" y="230" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="257" y="228" width="69" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0g8rbi3_di" bpmnElement="SequenceFlow_0g8rbi3">
+        <di:waypoint x="209" y="255" />
+        <di:waypoint x="328" y="255" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qyfc86_di" bpmnElement="SequenceFlow_1qyfc86">
+        <di:waypoint x="378" y="255" />
+        <di:waypoint x="551" y="255" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_11h6ue8_di" bpmnElement="SequenceFlow_11h6ue8">
+        <di:waypoint x="353" y="280" />
+        <di:waypoint x="353" y="390" />
+        <di:waypoint x="551" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1xc4c3v_di" bpmnElement="SequenceFlow_1xc4c3v">
+        <di:waypoint x="353" y="230" />
+        <di:waypoint x="353" y="116" />
+        <di:waypoint x="551" y="116" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0wp2zca_di" bpmnElement="Task_12cix26">
+        <dc:Bounds x="551" y="350" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1vkolru_di" bpmnElement="Task_0z1jv7e">
+        <dc:Bounds x="551" y="215" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_022bxnv_di" bpmnElement="Task_0xojaig">
+        <dc:Bounds x="551" y="76" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
