@@ -50,6 +50,12 @@ Access cockpit:
 
     http://localhost:8080/camunda/app/cockpit/
 
+Login credentials:
+
+    demo / demo
+
+
+
 Create customer via REST-API call:
 
     {
@@ -62,7 +68,10 @@ Create customer via REST-API call:
         },
         "emailAdress": {
           "value": "my@mail.com"
-        }
+        },
+        "yearlyIncome": {
+			    "value": 123123
+		    }
       }
     }
 
